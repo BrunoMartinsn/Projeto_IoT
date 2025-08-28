@@ -11,5 +11,5 @@ Route::get('/', Dashboard::class);
 Route::prefix('sensor')->group(function () {
  Route::get('/create', SensorCreate::class)->name('sensor-create');
  Route::get('/index', SensorIndex::class)->name('sensor-index');
-  Route::get('/edit', SensorEdit::class)->name('sensor-edit');
+  Route::get('/edit/{id}', SensorEdit::class)->name('sensor-edit');
 });

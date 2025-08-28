@@ -28,9 +28,5 @@ class SensorIndex extends Component
         
         return view('livewire.sensores.sensor-index', compact('sensores'));
     }
-     public function delete($id)
-    {
-        Sensor::findOrFail($id)->delete();
-        session()->flash('message', 'Aluno deletado com sucesso');
-    }
+     
 }
