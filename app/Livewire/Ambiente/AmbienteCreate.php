@@ -9,36 +9,36 @@ class AmbienteCreate extends Component
 {
     public $nome;
     public $descricao;
+    public $status;
+
 
     protected $rules = [
         'nome' => 'required',
         'descricao' => 'required',
-        
+       
     ];
 
     protected $messages = [
         'nome.required' => 'O campo é obrigatório',
         'descricao.required' => 'O campo é obrigatório',
-      
+     
     ];
 
-
-    public function store()
+     public function store()
     {
-           $this->validate();
 
-        Ambiente::create([
-            'nome' => $this->nome,
-            'descricao' => $this->descricao,
-    
-            
+        Ambiente::Create([
+            'nome' => $this -> nome,
+            'descricao' => $this -> descricao,
+            'status' => $this -> status,
         ]);
 
-        session()->flash('success', 'Cadastro realizado com sucesso!');
+        session()->flash('message', 'Ambiente Criado com Sucesso. . .');
+        $this->reset(['nome', 'descricao', 'status']);
         return redirect()->route('ambiente-list');
 
-       
     }
+
 
     public function render()
     {

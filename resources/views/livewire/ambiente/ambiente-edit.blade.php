@@ -58,14 +58,19 @@
                                                     <span class="text-danger small">{{ $message }}</span>
                                              @enderror
                                             </div>
+                                            
                                     
                                              
-                                          
-                                          <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="status"
-                                wire:model.defer="status">
-                            <label class="form-check-label" for="status">Status do ambiente</label>
-                        </div>
+                                         <select class="form-select" aria-label="default-select example"@error('status') is-invalid @enderror
+                id="status" wire:model.defer="status" placeholder="">
+                <option hidden>Status</option>
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+            @error('status')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
                 
                
               

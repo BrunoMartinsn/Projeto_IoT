@@ -56,11 +56,16 @@
 
 
                                             </div>
-                                            <div class="form-check form-switch">
-                                                <label for="descricao">Status:</label>
-                                                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                                                <label class="form-check-label" for="switchCheckDefault">Ativo ou Inativo</label>
-                                              </div>
+                                           <select class="form-select" aria-label="default-select example"@error('status') is-invalid @enderror
+                id="status" wire:model.defer="status" placeholder="">
+                <option hidden>Status</option>
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+            @error('status')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
                                             
                                             <div class="mb-3">
 
