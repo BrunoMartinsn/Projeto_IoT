@@ -78,6 +78,10 @@
                                             class="btn btn-sm btn-warning">
                                             <i class="bi bi-pencil"></i>
                                         </a>
+                                        <button wire:click="delete({{$ambiente->id}})"
+                                            class="btn btn-sm btn-danger"wire:confirm = "Tem certeza que deseja excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
     
 
 
