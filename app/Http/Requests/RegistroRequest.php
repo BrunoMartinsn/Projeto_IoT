@@ -21,7 +21,12 @@ class RegistroRequest extends FormRequest
      */
     public function rules(): array
     {
+ CRUD-Sensores
         return [
+
+      return [
+            'sensor_id' => 'required',
+ Produção
             'valor' => 'required',
             'unidade' => 'required',
             'data_hora' => 'required'
@@ -29,10 +34,21 @@ class RegistroRequest extends FormRequest
     }
 
     public function messages(){
+ CRUD-Sensores
     return [
          'valor.required' => 'valor obrigatorio',
          'unidade.required' => 'valor obrigatorio',
          'data_hora.required' => 'valor obrigatorio',
     ];
 } 
+
+        return [
+            'sensor_id.required' => 'Campo obrigatório',
+            'valor.required' => 'Campo obrigatório',
+            'unidade.required' => 'Campo obrigatório',
+            'data_hora.required' => 'Campo obrigatório'
+        ];
+    
+    }
+ Produção
 }
