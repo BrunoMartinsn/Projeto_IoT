@@ -26,7 +26,7 @@
                 <div class="card-header d-flex justify-content-between alingn-items-center text-white"
                     style="background-color: rgb(0, 0, 0)">
 
-                    <h5 class="mb-0">sensores</h5>
+                    <h5 class="mb-0">Sensores</h5>
 
                     <a href="{{ route('sensor-create') }}" class="btn btn-primary btn-sm">
 
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="mt-3">
-                    {{ $sensores->links() }}
+                   
                 </div>
             </div>
 

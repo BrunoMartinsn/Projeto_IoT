@@ -15,22 +15,25 @@ class AmbienteCreate extends Component
     protected $rules = [
         'nome' => 'required',
         'descricao' => 'required',
+        'status' => 'required'
        
     ];
 
     protected $messages = [
         'nome.required' => 'O campo é obrigatório',
         'descricao.required' => 'O campo é obrigatório',
+       
+
      
     ];
 
      public function store()
     {
-
+$this->validate();
         Ambiente::Create([
             'nome' => $this -> nome,
             'descricao' => $this -> descricao,
-            'status' => $this -> status,
+          
         ]);
 
         session()->flash('message', 'Ambiente Criado com Sucesso. . .');

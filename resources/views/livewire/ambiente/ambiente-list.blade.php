@@ -26,7 +26,7 @@
                 <div class="card-header d-flex justify-content-between alingn-items-center text-white"
                     style="background-color: rgb(0, 0, 0)">
 
-                    <h5 class="mb-0">ambiente</h5>
+                    <h5 class="mb-0">Ambiente</h5>
 
                     <a href="{{ route('ambiente-create') }}" class="btn btn-primary btn-sm">
 
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="mt-3">
-                    {{ $ambientes->links() }}
+                    
                 </div>
             </div>
 

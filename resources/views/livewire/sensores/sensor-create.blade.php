@@ -39,8 +39,11 @@
                             <option selected>Ambiente</option>
                         @foreach ($ambientes as $a)
                         <option value="{{$a->id}}">{{$a->nome}}</option>
+                        
                         @endforeach
+
                         </select>
+                        
                                             <div class="mb-3">
 
                                                 <label for="codigo" class="form-label">codigo</label>                                    <input type="text" class="form-control" id="nome"                                               nome="nome" placeholder="Ex.: Nome"
@@ -77,9 +80,9 @@
 
             <select class="form-select" aria-label="default-select example"@error('status') is-invalid @enderror
                 id="status" wire:model.defer="status" placeholder="">
-                <option hidden></option>
-                <option value="1">True</option>
-                <option value="0">False</option>
+                <option hidden>EX:</option>
+                <option value="1">ativo</option>
+                <option value="0">inativo</option>
             </select>
             @error('status')
                 <div class="invalid-feedback">{{ $message }}</div>
@@ -89,9 +92,10 @@
                                             <div class="mb-3">
 
                                                 <button type="submit" class="btn btn-success">Cadastrar</button>
-
+                                               
 
                                             </div>
+                                            
                                         </form>
 
                                     </div>

@@ -31,7 +31,7 @@
                                     </div>
                                 @endif
                                 <div class="card text-bg-secondary p-3">
-                                    <h5 class="card-header  text-center">Cadastro Sensores</h5>
+                                    <h5 class="card-header  text-center">Editar Sensores</h5>
                                     <div class="card-body">
 <div class="container mt-5">
     <div class="card shadow-sm">
