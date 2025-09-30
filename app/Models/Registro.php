@@ -18,7 +18,7 @@ class Registro extends Model
     ];
 
     protected $casts = [
-        'data_hora' => 'datatime'
+        'data_hora' => 'datetime'
     ];
 
     public function sensor(){
