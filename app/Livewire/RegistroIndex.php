@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Registro;
 use Livewire\Component;
 
 class RegistroIndex extends Component

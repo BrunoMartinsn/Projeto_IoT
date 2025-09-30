@@ -29,6 +29,7 @@
                         <td>{{ $registro->valor }}</td>
                         <td>{{ $registro->unidade }}</td>
                         <td>{{ $registro->data_hora }}</td>
+                         
                         <td>
                             <button wire:click="delete({{ $registro->id }})" class="btn btn-sm btn-outline-danger me-1"
                                 title="Excluir" wire:confirm="Tem certeza?">

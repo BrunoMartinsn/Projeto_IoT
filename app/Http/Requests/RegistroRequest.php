@@ -25,7 +25,8 @@ class RegistroRequest extends FormRequest
             'sensor_id' => 'required',
             'valor' => 'required',
             'unidade' => 'required',
-            'data_hora' => 'required'
+            'data_hora' => 'required',
+           
         ];
     }
 
@@ -34,7 +35,8 @@ class RegistroRequest extends FormRequest
             'sensor_id.required' => 'Campo obrigatório',
             'valor.required' => 'Campo obrigatório',
             'unidade.required' => 'Campo obrigatório',
-            'data_hora.required' => 'Campo obrigatório'
+            'data_hora.required' => 'Campo obrigatório',
+           
         ];
     
     }

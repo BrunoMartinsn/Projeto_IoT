@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RegistroController;
+use App\Models\Sensor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
