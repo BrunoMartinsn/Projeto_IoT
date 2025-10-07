@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\ValidationException;
 
 class RegistroRequest extends FormRequest
 {
@@ -21,34 +24,41 @@ class RegistroRequest extends FormRequest
      */
     public function rules(): array
     {
- CRUD-Sensores
-        return [
-
+ 
       return [
-            'sensor_id' => 'required',
- Produção
-            'valor' => 'required',
+        'cod_sensor' => 'required',
+            'valor' => 'required|numeric',
             'unidade' => 'required',
-            'data_hora' => 'required'
+          
         ];
     }
 
+    protected function failedValidation(Validator $validator)
+    {
+        if($this->expectsJson()){
+            throw new HttpResponseException(response()->json([
+                'success' => false,
+                'message' => 'Erro de validação',
+                'errors' => $validator->errors()
+            ], 422));
+        }
+
+         throw new ValidationException($validator);
+    }
+
+   
+
+
+
     public function messages(){
- CRUD-Sensores
+
     return [
-         'valor.required' => 'valor obrigatorio',
-         'unidade.required' => 'valor obrigatorio',
-         'data_hora.required' => 'valor obrigatorio',
+         'cod_sensor.required' => 'o código do sensor é obrigatório',
+         'valor.required' => 'o valor do sensor é obrigatório',
+         'valor.numeric' => 'valor precisa ser numerico',
+         'unidade.required' => 'a unidade tem que ser obrigatória'
     ];
 } 
 
-        return [
-            'sensor_id.required' => 'Campo obrigatório',
-            'valor.required' => 'Campo obrigatório',
-            'unidade.required' => 'Campo obrigatório',
-            'data_hora.required' => 'Campo obrigatório'
-        ];
-    
-    }
- Produção
+        
 }

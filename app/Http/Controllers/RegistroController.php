@@ -2,41 +2,36 @@
 
 namespace App\Http\Controllers;
 
-CRUD-Sensores
+
 use App\Http\Requests\RegistroRequest;
 use App\Models\Registro;
-
- Produção
+use App\Models\Sensor;
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller
 {
- CRUD-Sensores
+
     public function store(RegistroRequest $request){
+        $sensor = Sensor::where('codigo', $request->cod_sensor)->first();
+
+        if(!$sensor){
+            return response()->json(['erro'=>'sensor não encontrado'], 404);
+        }
+
         $registro = Registro::create([
-            "sensor_id" => $request->sensor_id,
+            "sensor_id" => $sensor->id,
             "valor" => $request->valor,
             "unidade" => $request->unidade,
-            "data_hora" => $request->data_hora
+            "data_hora" => now()
         ]);
-        return $registro;
+        
+        return response()->json([
+            'success' => 'regitro salvo com secesso',
+            'data' => $registro
+        ], 201);
     }
-public function index(Request $request){
-    
-}
+
     
 
-
-    public function store(RegistroRequest $request)
-    {
-        $registro = Registro::create([
-            'sensor_id' => $request->sensor_id,
-            'valor' => $request->valor,
-            'unidade' => $request->unidade,
-            'data_hora' => $request->data_hora
-        ]);
-
-        return $registro;
-    }
- Produção
+ 
 }
