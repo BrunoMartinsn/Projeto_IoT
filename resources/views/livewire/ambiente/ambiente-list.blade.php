@@ -4,11 +4,11 @@
 
             <div class="d-flex justify-content-between align-items-center mb-3 ">
 
-                
+
 
                 <form class="d-flex">
 
-                    <input class="form-control me-4 " type="search" name="search" placeholder="Buscar por ambientes"
+                    <input class="form-control me-4 " type="search" name="search" placeholder="Buscar por Ambientes"
                         aria-label="search " wire:model.live="search">
 
                     <button class="btn btn-outline-primary" type="submit">Buscar</button>
@@ -16,7 +16,7 @@
                 </form>
 
             </div>
-            
+
         </div>
 
         <div class="card">
@@ -41,7 +41,7 @@
 
 
             <div class="card-body">
-               
+
 
                 @if (session()->has('error'))
                     <div class="alert alert-danger">
@@ -53,11 +53,11 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                
+
                                 <th>Nome</th>
                                 <th>descricao</th>
                                 <th>status</th>
-                                
+
 
                                 <th>Ações</th>
                             </tr>
@@ -69,20 +69,20 @@
                                     <td>{{ $ambiente->nome }}</td>
                                     <td>{{ $ambiente->descricao }}</td>
                                     <td>{{ $ambiente->status }}</td>
-                                  
+
 
                                     <td>
 
-                                      
+
                                         <a href="{{ route('ambiente-edit', $ambiente->id) }}"
                                             class="btn btn-sm btn-warning">
                                             <i class="bi bi-pencil"></i>
                                         </a>
-                                        <button wire:click="delete({{$ambiente->id}})"
-                                            class="btn btn-sm btn-danger"wire:confirm = "Tem certeza que deseja excluir">
+                                        <button wire:click="delete({{ $ambiente->id }})"
+                                            class="btn btn-sm btn-danger"wire:confirm="Tem certeza que deseja excluir">
                                             <i class="bi bi-trash"></i>
                                         </button>
-    
+
 
 
                                     </td>
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="mt-3">
-                    
+
                 </div>
             </div>
 

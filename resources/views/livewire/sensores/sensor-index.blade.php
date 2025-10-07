@@ -8,7 +8,7 @@
 
                 <form class="d-flex">
 
-                    <input class="form-control me-4 " type="search" name="search" placeholder="Buscar por Aluno"
+                    <input class="form-control me-4 " type="search" name="search" placeholder="Buscar por Sensor"
                         aria-label="search " wire:model.live="search">
 
                     <button class="btn btn-outline-primary" type="submit">Buscar</button>
