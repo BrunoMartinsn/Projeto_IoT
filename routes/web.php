@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Ambiente\AmbienteCreate;
 use App\Livewire\Ambiente\AmbienteEdit;
 use App\Livewire\Ambiente\AmbienteList;
-
+use App\Livewire\ControleLed;
 use App\Livewire\Sensores\SensorCreate;
 use App\Livewire\Sensores\SensorEdit;
 use App\Livewire\Sensores\SensorIndex;
@@ -29,3 +29,5 @@ Route::prefix('sensor')->group(function () {
 });
 
 Route::get('registro', RegistroIndex::class)->name('registro-index');
+
+Route::get('controle/led', ControleLed::class)->name('controle');
