@@ -64,8 +64,8 @@
                                          <select class="form-select" aria-label="default-select example"@error('status') is-invalid @enderror
                 id="status" wire:model.defer="status" placeholder="">
                 <option hidden>Status</option>
-                <option value="1">True</option>
-                <option value="0">False</option>
+                <option value="1">Ativo</option>
+                <option value="0">Inativo</option>
             </select>
             @error('status')
                 <div class="invalid-feedback">{{ $message }}</div>

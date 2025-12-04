@@ -45,12 +45,13 @@
                         </select>
                         
                                             <div class="mb-3">
-
-                                                <label for="codigo" class="form-label">codigo</label>                                    <input type="text" class="form-control" id="nome"                                               nome="nome" placeholder="Ex.: Nome"
-                                                    wire:model.defer="codigo">  @error('codigo')
-                                         <span class="text-danger small">{{ $message }}</span>
-                                                @enderror
-
+                                                <label for="codigo">Codigo</label>
+                                                <input type="text" class="form-control" id="codigo"
+                                                    nome="codigo" placeholder="Ex.: codigo"
+                                                    wire:model.defer="codigo"> 
+                                             @error('codigo')
+                                                    <span class="text-danger small">{{ $message }}</span>
+                                             @enderror
                                             </div>
                                         <div class="mb-3">
                                                 <label for="tipo">tipo</label>
